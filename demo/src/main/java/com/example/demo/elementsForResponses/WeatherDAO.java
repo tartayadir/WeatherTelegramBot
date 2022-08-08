@@ -26,8 +26,6 @@ public class WeatherDAO {
             result.append(scanner.nextLine());
         }
 
-        System.out.println(result);
-
         JSONObject jsonObject = new JSONObject(result.toString());
         weather.setCityName(cityName);
 
@@ -39,7 +37,7 @@ public class WeatherDAO {
         String state = switch (weatherDescription){
             case "clear sky" -> "☀️";
             case "few clouds" -> "⛅️";
-            case "scattered clouds" -> "☁️";
+            case "scattered clouds", "overcast clouds" -> "☁️";
             case "broken clouds" -> "\uD83C\uDF29";
             case "shower rain" -> "\uD83C\uDF27";
             case "rain" -> "\uD83C\uDF26";

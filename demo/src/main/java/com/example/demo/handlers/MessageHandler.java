@@ -40,7 +40,7 @@ public class MessageHandler implements Handler<Message> {
                 if (command.equals("/weather")){
 
                     try {
-                        System.out.println(city);
+
                         responseText = WeatherDAO.getWhether(city);
                     }catch (IOException ioException){
                         ioException.printStackTrace();
